@@ -1,6 +1,6 @@
 Hate Filter
 =====
-A simple experiment using a Naïve Bayes classifier to detect homophobia, other types of hate in comments, text and tweets. At the moment the corpus of training data is really small.
+An experiment using a Naïve Bayes classifier to detect hate (misogyny, homophobia, racism, etc) in comments, text and tweets. At the moment the corpus of training data is limited and small.
 
 Contributions and ideas for improvement are welcome. 
 
@@ -9,7 +9,7 @@ How To Run
 -----
 At the command line
 
-`python python hate_classifier.py`
+`python hate_classifier.py`
 
 Via the browser
 
