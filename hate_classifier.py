@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # An experiment using Naive Bayes classifier to detect homophobia, other types of hate in comments, text and tweets.
 from textblob.classifiers import NaiveBayesClassifier
-from flask import Flask,request
+from flask import Flask,request,jsonify
 import pickle,os
 from termcolor import colored, cprint
 
@@ -78,7 +78,7 @@ def main():
 		message = request.args.get('message')
 		prob_dist = cl.prob_classify(message)
 		print message,prob_dist.max(),round(prob_dist.prob("hate"), 2),round(prob_dist.prob("not"), 2)
-		return prob_dist.max()
+		return jsonify(message=message,classification=prob_dist.max(),prob_hate=round(prob_dist.prob("hate"),2),prob_not=round(prob_dist.prob("not"), 2))
 
 if __name__ == "__main__":
 	main()
