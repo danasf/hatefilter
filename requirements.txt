@@ -1,0 +1,4 @@
+Flask
+textblob
+nltk
+termcolor
